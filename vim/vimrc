@@ -5,5 +5,14 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive', { 'on': 'Gstatus' }
 call plug#end()
 
+" Settings
+let mapleader = " "
+
+" Keybindings
+
 " Project management
 map \ :NERDTreeToggle<CR>
+
+" General
+map <leader><leader> :
+imap jk <ESC>
