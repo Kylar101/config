@@ -2,6 +2,7 @@
 call plug#begin()
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive', { 'on': 'Gstatus' }
 call plug#end()
 
 " Project management
