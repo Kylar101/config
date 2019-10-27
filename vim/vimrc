@@ -1,0 +1,8 @@
+" Install packages and configuration
+call plug#begin()
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'tpope/vim-surround'
+call plug#end()
+
+" Project management
+map \ :NERDTreeToggle<CR>
