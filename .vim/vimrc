@@ -1,0 +1,127 @@
+" Custom Vim configuration
+
+" Vim plug setup
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }" On-demand loading
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive', { 'on': 'Gstatus' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'aquach/vim-http-client'
+
+" Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' } " Javascript support
+Plug 'leafgarland/typescript-vim' " Typescript lang
+" Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' } " JSX support
+
+Plug 'kaicataldo/material.vim'
+
+call plug#end()
+
+if (has('termguicolors'))
+  set termguicolors
+endif
+
+colorscheme material
+syntax enable
+colorscheme material
+
+" Settings
+set clipboard+=unnamedplus
+set completeopt=menu,preview,longest,noinsert
+set ttyfast
+set modelines=0
+set history=500
+set autoread
+set showmatch
+set splitbelow splitright
+set mouse=a
+
+let mapleader = " "
+
+" User Interface
+" set colorcolumn=120
+set title
+set number
+set lazyredraw
+set signcolumn=yes
+set showcmd
+set hidden
+set showmode
+set updatetime=300
+
+"General UI
+highlight LineNr guibg=NONE |
+highlight LineNr ctermbg=NONE |
+highlight SignColumn ctermbg=NONE guibg=NONE |
+highlight VertSplit guibg=NONE ctermbg=NONE |
+highlight StatusLine ctermbg=white ctermbg=black
+
+" Files and Backups
+set noswapfile
+set backupdir=~/tmp,/tmp
+set undodir=~/.vim/.tmp,~/tmp,~/.tmp,/tmp
+set wildignore=.svn,CVS,.git,*.swp,*.jpg,*.png,*.gif,*.pdf,*.bak
+set suffixes+=.old
+set undofile
+
+" Text Formatting
+set smartcase
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set ignorecase
+set hlsearch
+set nowrap
+
+" Keybindings
+
+" Project management
+map \ :NERDTreeToggle<CR>
+nmap <leader>pf :GFiles<CR>
+
+" General
+map <leader><leader> :
+map <leader>ls ^
+map <leader>le $
+map <leader>fs :w<CR>
+map <leader>fq :q<CR>
+imap jk <ESC>
+
+" Tabs
+map <leader>ts :tab split<CR>
+map <leader>tn :tabe<CR>
+map <leader>tc :tabc<CR>
+map <leader>to :tabo<CR>
+
+" Searching
+nnoremap <leader>sw :Rg<CR>
+
+" FZF configuration
+let $FZF_DEFAULT_COMMAND = 'rg --hidden --files'
+
+" " Grep with preview
+command! -bang -nargs=* Rg 
+      \ call fzf#vim#grep(
+      \ 'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+      \ fzf#vim#with_preview({'options': '--delimiter : --nth 4..'},'right:50%:hidden', '?'))
+
+" " Files with preview
+command! -bang -nargs=* -complete=dir GFiles 
+      \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right:50%:hidden', '?'), <bang>0)
+
+" LSP configuration
+" let g:coc_force_debug = 1
+" inoremap <silent><expr> <c-space> coc#refresh()
+" nmap <silent> [c <Plug>(coc-diagnostic-prev)
+" nmap <silent> ]c <Plug>(coc-diagnostic-next)
+" nmap <silent> gd <Plug>(coc-definition)
+" nmap <silent> gh <Plug>(coc-type-definition)
+" nmap <silent> gi <Plug>(coc-implementation)
+" nmap <silent> gr <Plug>(coc-references)
+" nmap <silent> <F2> <Plug>(coc-rename)
+" nmap <leader>qf <Plug>(coc-fix-current)
+" nnoremap <silent> K :call <SID>show_documentation()<CR>
+" autocmd CursorHold * silent call CocActionAsync('highlight')
