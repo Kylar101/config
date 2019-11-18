@@ -9,11 +9,11 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'aquach/vim-http-client'
 
-" Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' } " Javascript support
 Plug 'leafgarland/typescript-vim' " Typescript lang
-" Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' } " JSX support
+Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' } " JSX support
 
 Plug 'kaicataldo/material.vim'
 
@@ -113,15 +113,15 @@ command! -bang -nargs=* -complete=dir GFiles
       \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right:50%:hidden', '?'), <bang>0)
 
 " LSP configuration
-" let g:coc_force_debug = 1
-" inoremap <silent><expr> <c-space> coc#refresh()
-" nmap <silent> [c <Plug>(coc-diagnostic-prev)
-" nmap <silent> ]c <Plug>(coc-diagnostic-next)
-" nmap <silent> gd <Plug>(coc-definition)
-" nmap <silent> gh <Plug>(coc-type-definition)
-" nmap <silent> gi <Plug>(coc-implementation)
-" nmap <silent> gr <Plug>(coc-references)
-" nmap <silent> <F2> <Plug>(coc-rename)
-" nmap <leader>qf <Plug>(coc-fix-current)
-" nnoremap <silent> K :call <SID>show_documentation()<CR>
-" autocmd CursorHold * silent call CocActionAsync('highlight')
+let g:coc_force_debug = 1
+inoremap <silent><expr> <c-space> coc#refresh()
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gh <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> <F2> <Plug>(coc-rename)
+nmap <leader>qf <Plug>(coc-fix-current)
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+autocmd CursorHold * silent call CocActionAsync('highlight')
