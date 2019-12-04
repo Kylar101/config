@@ -51,13 +51,6 @@ set hidden
 set showmode
 set updatetime=300
 
-"General UI
-highlight LineNr guibg=NONE |
-highlight LineNr ctermbg=NONE |
-highlight SignColumn ctermbg=NONE guibg=NONE |
-highlight VertSplit guibg=NONE ctermbg=NONE |
-highlight StatusLine ctermbg=white ctermbg=black
-
 " Files and Backups
 set noswapfile
 set backupdir=~/tmp,/tmp
