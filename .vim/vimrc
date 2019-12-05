@@ -89,6 +89,16 @@ map <leader>tn :tabe<CR>
 map <leader>tc :tabc<CR>
 map <leader>to :tabo<CR>
 
+" Window bindings
+nnoremap <leader>wh <C-w>h
+nnoremap <leader>wj <C-w>j
+nnoremap <leader>wk <C-w>k
+nnoremap <leader>wl <C-w>l
+nnoremap <leader>wo <C-w>o
+nnoremap <leader>wc <C-w>c
+" nnoremap <leader>ws <C-w>s
+nnoremap <leader>wv <C-w>v
+
 " Searching
 nnoremap <leader>sw :Rg<CR>
 
