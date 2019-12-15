@@ -73,7 +73,7 @@ set nowrap
 
 " Project management
 map \ :NERDTreeToggle<CR>
-nmap <leader>pf :GFiles<CR>
+nmap <leader>sf :GFiles<CR>
 
 " General
 map <leader><leader> :
