@@ -13,7 +13,9 @@ Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' } " Javascript support
 Plug 'leafgarland/typescript-vim' " Typescript lang
+Plug 'peitalin/vim-jsx-typescript' " tsx
 Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' } " JSX support
+Plug 'OmniSharp/omnisharp-vim' " C# support
 
 Plug 'kaicataldo/material.vim'
 
@@ -25,7 +27,10 @@ endif
 
 colorscheme material
 syntax enable
-colorscheme material
+
+" WSL Terminal cursor settings
+let &t_SI="\<CSI>5 q"
+let &t_EI="\<CSI>1 q"
 
 " Settings
 set clipboard+=unnamedplus
@@ -73,7 +78,7 @@ set nowrap
 
 " Project management
 map \ :NERDTreeToggle<CR>
-nmap <leader>sf :GFiles<CR>
+nmap <leader>pf :GFiles<CR>
 
 " General
 map <leader><leader> :
