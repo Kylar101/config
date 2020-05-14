@@ -126,6 +126,7 @@ let g:coc_global_extensions=[ 'coc-omnisharp', 'coc-tsserver', 'coc-eslint', 'co
 inoremap <silent><expr> <c-space> coc#refresh()
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
+nmap <silent> gb <C-o>
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gh <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
