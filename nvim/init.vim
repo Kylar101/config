@@ -44,6 +44,7 @@ nnoremap <leader>wj <C-w>j
 nnoremap <leader>wk <C-w>k
 nnoremap <leader>wl <C-w>l
 nnoremap <leader>wv <C-w>v
+nnoremap <leader>ws <C-w>s
 
 " project
 nnoremap <leader>pw :Rg <C-R>=expand("<cword>")<CR><CR>
