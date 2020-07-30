@@ -2,15 +2,16 @@
 
 " Vim plug setup
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }" On-demand loading
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } " On-demand loading
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive', { 'on': 'Gstatus' }
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Gotta have fuzzy search
 Plug 'junegunn/fzf.vim'
-Plug 'aquach/vim-http-client'
 
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
+" Syntax highlighting
+Plug 'vim-ruby/vim-ruby' " Ruby Support
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' } " Javascript support
 Plug 'leafgarland/typescript-vim' " Typescript lang
 Plug 'peitalin/vim-jsx-typescript' " tsx
@@ -26,11 +27,12 @@ if (has('termguicolors'))
 endif
 
 colorscheme material
+set background=dark
 syntax enable
 
 " WSL Terminal cursor settings
-let &t_SI="\<CSI>5 q"
-let &t_EI="\<CSI>1 q"
+" let &t_SI="\<CSI>5 q"
+" let &t_EI="\<CSI>1 q"
 
 " Settings
 set clipboard+=unnamedplus
@@ -42,6 +44,7 @@ set autoread
 set showmatch
 set splitbelow splitright
 set mouse=a
+set relativenumber
 
 let mapleader = " "
 
@@ -122,7 +125,7 @@ command! -bang -nargs=* -complete=dir GFiles
 
 " LSP configuration
 let g:coc_force_debug = 1
-let g:coc_global_extensions=[ 'coc-omnisharp', 'coc-tsserver', 'coc-eslint', 'coc-json' ]
+let g:coc_global_extensions=[ 'coc-omnisharp', 'coc-tsserver', 'coc-eslint', 'coc-json', 'coc-solargraph', 'coc-deno' ]
 inoremap <silent><expr> <c-space> coc#refresh()
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
@@ -133,5 +136,4 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> <F2> <Plug>(coc-rename)
 nmap <leader>qf <Plug>(coc-fix-current)
-nnoremap <silent> K :call <SID>show_documentation()<CR>
 autocmd CursorHold * silent call CocActionAsync('highlight')
