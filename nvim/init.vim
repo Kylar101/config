@@ -56,5 +56,6 @@ map \ :NERDTreeToggle<CR>
 set relativenumber " show line numbers
 set number " show the actual linke number for the line we are on
 
+" colorscheme
 colorscheme gruvbox
 set background=dark
