@@ -2,6 +2,11 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'mxw/vim-jsx'
+
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
@@ -52,6 +57,17 @@ nnoremap <leader>pf :GFiles<CR>
 nnoremap <leader>ff :Files<CR>
 map \ :NERDTreeToggle<CR>
 
+" LSP
+let g:coc_force_debug = 1
+let g:coc_global_extensions = ['coc-tsserver', 'coc-eslint', 'coc-json']
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gh <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> <F2> <Plug>(coc-rename)
+nmap <leader>qf <Plug>(coc-fix-current)
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
 " Settings
 set relativenumber " show line numbers
 set number " show the actual linke number for the line we are on
@@ -59,3 +75,4 @@ set number " show the actual linke number for the line we are on
 " colorscheme
 colorscheme gruvbox
 set background=dark
+syntax enable
