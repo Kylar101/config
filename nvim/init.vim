@@ -15,6 +15,7 @@ Plug 'tpope/vim-fugitive', { 'on': 'Gstatus' }
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
 Plug 'gruvbox-community/gruvbox'
+Plug 'hardcoreplayers/oceanic-material'
 
 call plug#end()
 
@@ -66,13 +67,13 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> <F2> <Plug>(coc-rename)
 nmap <leader>qf <Plug>(coc-fix-current)
-" autocmd CursorHold * silent call CocActionAsync('highlight')
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Settings
 set relativenumber " show line numbers
 set number " show the actual linke number for the line we are on
 
 " colorscheme
-colorscheme gruvbox
+colorscheme oceanic_material
 set background=dark
 syntax enable
