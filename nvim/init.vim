@@ -1,23 +1,22 @@
-" lua require('plugins')
-call plug#begin('~/.vim/plugged')
-
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'mxw/vim-jsx'
-
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive', { 'on': 'Gstatus' }
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-
-Plug 'gruvbox-community/gruvbox'
-Plug 'hardcoreplayers/oceanic-material'
-
-call plug#end()
+lua require('plugins')
+" call plug#begin('~/.vim/plugged')
+" 
+" Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+" Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+" Plug 'leafgarland/typescript-vim'
+" Plug 'peitalin/vim-jsx-typescript'
+" Plug 'mxw/vim-jsx'
+" 
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
+" 
+" Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-fugitive', { 'on': 'Gstatus' }
+" Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+" 
+" Plug 'gruvbox-community/gruvbox'
+" 
+" call plug#end()
 
 if (has('termguicolors'))
   set termguicolors
@@ -53,27 +52,26 @@ nnoremap <leader>wv <C-w>v
 nnoremap <leader>ws <C-w>s
 
 " project
-nnoremap <leader>pw :Rg <C-R>=expand("<cword>")<CR><CR>
-nnoremap <leader>pf :GFiles<CR>
-nnoremap <leader>ff :Files<CR>
+nnoremap <leader>pw :lua require'telescope.builtin'.live_grep{}<CR>
+nnoremap <leader>pf :lua require'telescope.builtin'.git_files{}<CR>
 map \ :NERDTreeToggle<CR>
 
 " LSP
-let g:coc_force_debug = 1
-let g:coc_global_extensions = ['coc-tsserver', 'coc-eslint', 'coc-json']
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gh <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> <F2> <Plug>(coc-rename)
-nmap <leader>qf <Plug>(coc-fix-current)
-autocmd CursorHold * silent call CocActionAsync('highlight')
+" let g:coc_force_debug = 1
+" let g:coc_global_extensions = ['coc-tsserver', 'coc-eslint', 'coc-json']
+" nmap <silent> gd <Plug>(coc-definition)
+" nmap <silent> gh <Plug>(coc-type-definition)
+" nmap <silent> gi <Plug>(coc-implementation)
+" nmap <silent> gr <Plug>(coc-references)
+" nmap <silent> <F2> <Plug>(coc-rename)
+" nmap <leader>qf <Plug>(coc-fix-current)
+" autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Settings
 set relativenumber " show line numbers
 set number " show the actual linke number for the line we are on
 
 " colorscheme
-colorscheme oceanic_material
+colorscheme gruvbox
 set background=dark
 syntax enable
