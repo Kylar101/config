@@ -14,6 +14,7 @@ return require('packer').startup(
     use 'junegunn/limelight.vim'
 
     use 'neovim/nvim-lsp'
+    use 'neovim/nvim-lspconfig'
     use 'tjdevries/nlua.nvim'
     use 'nvim-lua/lsp-status.nvim'
     use 'nvim-lua/completion-nvim'
