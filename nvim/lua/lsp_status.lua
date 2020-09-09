@@ -32,3 +32,5 @@ status.on_attach = function(client)
   vim.cmd [[  autocmd CursorHold,BufEnter <buffer> lua require('lsp-status').update_current_function()]]
   vim.cmd [[augroup END]]
 end
+
+return status
