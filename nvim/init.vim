@@ -71,6 +71,9 @@ map \ :NERDTreeToggle<CR>
 set relativenumber " show line numbers
 set number " show the actual linke number for the line we are on
 
+set shiftwidth=2 tabstop=2 softtabstop=4 expandtab autoindent smartindent
+setlocal colorcolumn=80
+
 " colorscheme
 colorscheme gruvbox
 set background=dark

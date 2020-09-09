@@ -10,9 +10,17 @@ return require('packer').startup(
 
     use { 'junegunn/fzf', run = './install --all' }
     use { 'junegunn/fzf.vim' }
-    use { 'yuki-ycino/fzf-preview.vim', run = 'npm install' }
+    use 'junegunn/goyo.vim'
+    use 'junegunn/limelight.vim'
 
     use 'neovim/nvim-lsp'
+    use 'nvim-lua/lsp-status.nvim'
+    use 'nvim-lua/completion-nvim'
+
+    use 'pangloss/vim-javascript'
+    use 'leafgarland/typescript-vim'
+    use 'peitalin/vim-jsx-typescript'
+    use 'mxw/vim-jsx'
 
     use { 'scrooloose/nerdtree', opt = true, cmd = { 'NERDTreeToggle' } }
 
