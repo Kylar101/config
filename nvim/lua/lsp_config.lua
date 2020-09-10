@@ -55,11 +55,11 @@ local custom_attach = function(client)
 end
 
 -- lua config
-require('nlua.lsp.nvim').setup(nvim_lsp, {
-  on_attach = custom_attach
-})
+-- require('nlua.lsp.nvim').setup(nvim_lsp, {
+--   on_attach = custom_attach
+-- })
 
-nvim_lsp.tsserver.setup({
+require'nvim_lsp'.tsserver.setup({
   cmd = { "typescript-language-server", "--stdio" },
   filetypes = {
     "javascript",
@@ -69,8 +69,11 @@ nvim_lsp.tsserver.setup({
     "typescriptreact",
     "typescript.tsx"
   },
-  on_attach = custom_attach
+  on_attach = custom_attach,
+  root_dir = nvim-lsp.util.root_pattern("package.json", "tsconfig.json", ".git")
 })
+
+-- require'nvim_lsp'.tsserver.setup{}
 
 
 

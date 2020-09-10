@@ -57,6 +57,13 @@ nnoremap <leader>pf :lua require'telescope.builtin'.git_files{}<CR>
 map \ :NERDTreeToggle<CR>
 
 " LSP
+" :lua << END
+"   vim.cmd('packadd nvim-lspconfig')
+"   require'nvim_lsp'.tsserver.setup{}
+" END
+
+nnoremap <silent>gd <cmd>lua vim.lsp.buf.declaration()<CR>
+
 " let g:coc_force_debug = 1
 " let g:coc_global_extensions = ['coc-tsserver', 'coc-eslint', 'coc-json']
 " nmap <silent> gd <Plug>(coc-definition)
