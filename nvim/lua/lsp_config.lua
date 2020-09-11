@@ -33,14 +33,14 @@ status.activate()
 
 local custom_attach = function(client)
   completion.on_attach(client)
-  status.on_attach(client)
+  status    .on_attach(client)
 
-  mapper('n', 'gd', '<cmd>lua vim.lsp.buf.declaration()<cr>')
-  mapper('n', '<c-]>', '<cmd>lua vim.lsp.buf.definition()<cr>')
+  -- mapper('n', 'gd', '<cmd>lua vim.lsp.buf.declaration()<cr>')
+  mapper('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
   mapper('n', 'gD', '<cmd>lua vim.lsp.buf.implementation()<cr>')
   mapper('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>')
 
-  mapper('n', '<leader>sl', '<cmd>lua vim.lsp.util.show_line_diagnostics()<cr>')
+  mapper('n', '<leader>ls', '<cmd>lua vim.lsp.util.show_line_diagnostics()<cr>')
 
   mapper(
     'n',
@@ -59,21 +59,18 @@ end
 --   on_attach = custom_attach
 -- })
 
-require'nvim_lsp'.tsserver.setup({
-  cmd = { "typescript-language-server", "--stdio" },
-  filetypes = {
-    "javascript",
-    "javascriptreact",
-    "javascript.jsx",
-    "typescript",
-    "typescriptreact",
-    "typescript.tsx"
-  },
-  on_attach = custom_attach,
-  root_dir = nvim-lsp.util.root_pattern("package.json", "tsconfig.json", ".git")
-})
+nvim_lsp.omnisharp.setup{
+  on_attach = custom_attach
+}
 
--- require'nvim_lsp'.tsserver.setup{}
+nvim_lsp.tsserver.setup{
+  on_attach = custom_attach
+}
+
+nvim_lsp.vuels.setup{
+  on_attach = custom_attach
+}
+
 
 
 

@@ -62,7 +62,7 @@ map \ :NERDTreeToggle<CR>
 "   require'nvim_lsp'.tsserver.setup{}
 " END
 
-nnoremap <silent>gd <cmd>lua vim.lsp.buf.declaration()<CR>
+" nnoremap <silent>gd <cmd>lua vim.lsp.buf.declaration()<CR>
 
 " let g:coc_force_debug = 1
 " let g:coc_global_extensions = ['coc-tsserver', 'coc-eslint', 'coc-json']
