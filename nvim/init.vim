@@ -81,6 +81,9 @@ set number " show the actual linke number for the line we are on
 set shiftwidth=2 tabstop=2 softtabstop=4 expandtab autoindent smartindent
 setlocal colorcolumn=80
 
+set completeopt=menuone,noinsert,noselect
+let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+
 " colorscheme
 colorscheme gruvbox
 set background=dark
