@@ -1,5 +1,9 @@
 " Automatically generated packer.nvim plugin loader code
 
+if !has('nvim')
+  finish
+endif
+
 lua << END
 local plugins = {
   nerdtree = {
@@ -78,7 +82,6 @@ _packer_load = function(names, cause)
   for _, name in ipairs(names) do
     if not plugins[name].loaded then
       vim.cmd('packadd ' .. name)
-      vim._update_package_paths()
       if plugins[name].config then
         for _i, config_line in ipairs(plugins[name].config) do
           loadstring(config_line)()
@@ -126,7 +129,7 @@ _packer_load = function(names, cause)
 
     -- NOTE: I'm not sure if the below substitution is correct; it might correspond to the literal
     -- characters \<Plug> rather than the special <Plug> key.
-    vim.fn.feedkeys(string.gsub(cause.keys, '^<Plug>', '\\<Plug>') .. extra)
+    vim.fn.feedkeys(string.gsub(string.gsub(cause.keys, '^<Plug>', '\\<Plug>') .. extra, '<[cC][rR]>', '\r'))
   elseif cause.event then
     vim.cmd(fmt('doautocmd <nomodeline> %s', cause.event))
   elseif cause.ft then
@@ -135,19 +138,18 @@ _packer_load = function(names, cause)
   end
 end
 
+-- Runtimepath customization
+
 -- Pre-load configuration
 -- Post-load configuration
 -- Conditional loads
-vim._update_package_paths()
+-- Load plugins in order defined by `after`
 END
 
 function! s:load(names, cause) abort
-  call luaeval('_packer_load(_A[1], _A[2])', [a:names, a:cause])
+call luaeval('_packer_load(_A[1], _A[2])', [a:names, a:cause])
 endfunction
 
-" Runtimepath customization
-
-" Load plugins in order defined by `after`
 
 " Command lazy-loads
 command! -nargs=* -range -bang -complete=file NERDTreeToggle call s:load(['nerdtree'], { "cmd": "NERDTreeToggle", "l1": <line1>, "l2": <line2>, "bang": <q-bang>, "args": <q-args> })

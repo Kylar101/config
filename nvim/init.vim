@@ -1,22 +1,10 @@
 lua require('plugins')
-" call plug#begin('~/.vim/plugged')
-" 
-" Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-" Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-" Plug 'leafgarland/typescript-vim'
-" Plug 'peitalin/vim-jsx-typescript'
-" Plug 'mxw/vim-jsx'
-" 
-" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-" Plug 'junegunn/fzf.vim'
-" 
-" Plug 'tpope/vim-surround'
-" Plug 'tpope/vim-fugitive', { 'on': 'Gstatus' }
-" Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-" 
-" Plug 'gruvbox-community/gruvbox'
-" 
-" call plug#end()
+call plug#begin('~/.vim/plugged')
+
+" Plug 'nvim-treesitter/nvim-treesitter', { do = ':TSUpdate' }
+" Plug 'nvim-treesitter/playground'
+
+call plug#end()
 
 if (has('termguicolors'))
   set termguicolors

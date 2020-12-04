@@ -1,5 +1,4 @@
 local packer_exists = pcall(vim.cmd, [[packadd packer.nvim]])
-vim._update_package_paths()
 if not packer_exists then
   if vim.fn.input("Download Packer? (y for yes") ~= "y" then
     return
@@ -30,6 +29,9 @@ return require('packer').startup(
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
     use 'nvim-lua/telescope.nvim'
+
+--    use 'nvim-treesitter/nvim-treesitter'
+--    use 'nvim-treesitter/playground'
 
     use { 'junegunn/fzf', run = './install --all' }
     use { 'junegunn/fzf.vim' }

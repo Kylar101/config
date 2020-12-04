@@ -1,4 +1,4 @@
-local nvim_lsp = require('nvim_lsp')
+local nvim_lsp = require('lspconfig')
 local nvim_status = require('lsp-status')
 local completion = require('completion')
 
