@@ -1,10 +1,10 @@
 lua require('plugins')
-call plug#begin('~/.vim/plugged')
+" call plug#begin('~/.vim/plugged')
 
 " Plug 'nvim-treesitter/nvim-treesitter', { do = ':TSUpdate' }
 " Plug 'nvim-treesitter/playground'
 
-call plug#end()
+" call plug#end()
 
 if (has('termguicolors'))
   set termguicolors
@@ -44,27 +44,18 @@ nnoremap <leader>pw :lua require'telescope.builtin'.live_grep{}<CR>
 nnoremap <leader>pf :lua require'telescope.builtin'.git_files{}<CR>
 map \ :NERDTreeToggle<CR>
 
-" LSP
-" :lua << END
-"   vim.cmd('packadd nvim-lspconfig')
-"   require'nvim_lsp'.tsserver.setup{}
-" END
-
-" nnoremap <silent>gd <cmd>lua vim.lsp.buf.declaration()<CR>
-
-" let g:coc_force_debug = 1
-" let g:coc_global_extensions = ['coc-tsserver', 'coc-eslint', 'coc-json']
-" nmap <silent> gd <Plug>(coc-definition)
-" nmap <silent> gh <Plug>(coc-type-definition)
-" nmap <silent> gi <Plug>(coc-implementation)
-" nmap <silent> gr <Plug>(coc-references)
-" nmap <silent> <F2> <Plug>(coc-rename)
-" nmap <leader>qf <Plug>(coc-fix-current)
-" autocmd CursorHold * silent call CocActionAsync('highlight')
-
 " Settings
 set relativenumber " show line numbers
 set number " show the actual linke number for the line we are on
+set nohlsearch
+
+set undodir=~/.vim/undodir
+set undofile
+set noswapfile
+set nobackup
+
+set signcolumn=yes
+set scrolloff=8
 
 set shiftwidth=2 tabstop=2 softtabstop=4 expandtab autoindent smartindent
 setlocal colorcolumn=80
@@ -76,3 +67,16 @@ let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 colorscheme gruvbox
 set background=dark
 syntax enable
+
+" Autocommands
+fun! TrimWhitespace()
+  let l:save = winsaveview()
+  keeppatterns %s/\s\+$//e
+  call winrestview(l:save)
+endfun
+
+augroup Kylar
+  autocmd!
+  autocmd BufWritePre * :call TrimWhitespace()
+augroup END
+
