@@ -19,7 +19,7 @@ if not packer_exists then
 
   print(out)
   print("Downloading packer.nvim...")
-  
+
   return
 end
 
@@ -30,7 +30,7 @@ return require('packer').startup(
     use 'nvim-lua/plenary.nvim'
     use 'nvim-lua/telescope.nvim'
 
---    use 'nvim-treesitter/nvim-treesitter'
+--    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 --    use 'nvim-treesitter/playground'
 
     use { 'junegunn/fzf', run = './install --all' }

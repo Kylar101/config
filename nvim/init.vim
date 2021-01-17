@@ -1,10 +1,13 @@
+
+"    ____  __.       .__
+"    |    |/ _|___.__.|  | _____ _______
+"    |      < <   |  ||  | \__  \\_  __ \
+"    |    |  \ \___  ||  |__/ __ \|  | \/
+"    |____|__ \/ ____||____(____  /__|
+"            \/\/               \/
+"
+
 lua require('plugins')
-" call plug#begin('~/.vim/plugged')
-
-" Plug 'nvim-treesitter/nvim-treesitter', { do = ':TSUpdate' }
-" Plug 'nvim-treesitter/playground'
-
-" call plug#end()
 
 if (has('termguicolors'))
   set termguicolors
