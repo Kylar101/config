@@ -54,22 +54,26 @@ local custom_attach = function(client)
   )
 end
 
--- lua config
--- require('nlua.lsp.nvim').setup(nvim_lsp, {
+-- nvim_lsp.omnisharp.setup{
 --   on_attach = custom_attach
--- })
+-- }
 
-nvim_lsp.omnisharp.setup{
+nvim_lsp.tsserver.setup({
+  cmd = {"typescript-language-server", "--stdio"},
+  filetypes = {
+    "javascript",
+    "javascriptreact",
+    "javascript.jsx",
+    "typescript",
+    "typescriptreact",
+    "typescript.jsx"
+  },
   on_attach = custom_attach
-}
+})
 
-nvim_lsp.tsserver.setup{
-  on_attach = custom_attach
-}
-
-nvim_lsp.vuels.setup{
-  on_attach = custom_attach
-}
+-- nvim_lsp.vuels.setup{
+--   on_attach = custom_attach
+-- }
 
 
 
