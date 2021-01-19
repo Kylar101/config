@@ -11,7 +11,7 @@ require('nvim-treesitter.configs').setup {
     use_languagetree = false,
     custom_captures = custom_captures
   },
-  indentation = {
+  indent = {
     enable = true
   }
 }
