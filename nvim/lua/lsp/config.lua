@@ -2,7 +2,7 @@ local nvim_lsp = require('lspconfig')
 local nvim_status = require('lsp-status')
 local completion = require('completion')
 
-local status = require('lsp_status')
+local status = require('lsp.status')
 
 local mapper = function(mode, key, result)
   vim.fn.nvim_buf_set_keymap(0, mode, key, result, { noremap = true, silent = true })

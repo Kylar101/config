@@ -1,5 +1,5 @@
 --  load lsp
-local ok, _ = pcall(function() require('lsp_config') end)
+require('lsp.config')
 
 require('c.treesitter')
 
