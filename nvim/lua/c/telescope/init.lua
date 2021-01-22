@@ -25,7 +25,7 @@ require('telescope').setup {
     },
 
     selection_strategy = "reset",
-    sorting_strategy = "descending",
+    sorting_strategy = "ascending",
     scroll_strategy = "cycle",
     prompt_position = "top",
     color_devicons = true,
@@ -33,7 +33,7 @@ require('telescope').setup {
     mappings = {
       i = {
         ["<C-x>"] = false,
-        ["<C-s>"] = actions.goto_file_selection_split
+        ["<C-s>"] = actions.goto_file_selection_vsplit
       }
     },
 
@@ -48,3 +48,48 @@ require('telescope').setup {
     grep_previewer = previewers.vim_buffer_vimgrep.new
   }
 }
+
+-------------------------------------------------------------------------------
+------------------------------ FUNCTIONS --------------------------------------
+-------------------------------------------------------------------------------
+
+local M = {};
+
+function M.edit_neovim()
+  require('telescope.builtin').find_files {
+    prompt_title = '~ dotfiles ~',
+    shorten_path = false,
+    cwd = '~/_repos/config/nvim',
+    width = 0.25,
+
+    layout_strategy = 'horizontal',
+    layout_config = {
+      preview_width = 0.65
+    }
+  }
+end
+
+function M.git_files()
+  require('telescope.builtin').git_files()
+end
+
+function M.lsp_code_actions()
+  local opts = themes.get_dropdown {
+    winblend = 10,
+    border = true,
+    previewer = false,
+    shorten_path = false
+  }
+
+  require('telescope.builtin').lsp_code_actions(opts)
+end
+
+return setmetatable({}, {
+  __index = function(_, k)
+    if M[k] then
+      return M[k]
+    else
+      return require('telescope.builtin')[k]
+    end
+  end
+})

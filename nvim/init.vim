@@ -44,7 +44,7 @@ nnoremap <leader>ws <C-w>s
 
 " project
 nnoremap <leader>pw :lua require'telescope.builtin'.live_grep{}<CR>
-nnoremap <leader>pf :lua require'telescope.builtin'.git_files{}<CR>
+"nnoremap <leader>pf :lua require'telescope.builtin'.git_files{}<CR>
 map \ :NERDTreeToggle<CR>
 
 " Settings
