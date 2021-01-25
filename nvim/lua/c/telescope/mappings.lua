@@ -21,4 +21,4 @@ map('<leader>en', 'edit_neovim')
 
 map('<leader>pf', 'git_files')
 
-map('<leader>la', 'lsp_code_actions')
+map('<leader>qf', 'lsp_code_actions')
