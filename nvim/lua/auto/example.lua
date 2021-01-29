@@ -1,1 +1,1 @@
-print('auto loading')
+print('auto loaded')
