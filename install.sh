@@ -25,3 +25,8 @@ install_library()
 # Setup work spaces
 mkdir -p ~/_repos
 mkdir -p ~/_work
+
+# Install neovim
+mv ~/nvim.appimage ~/nvim.appimage.old
+curl -Lo ~/nvim.appimage https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+chmod u+x ~/nvim.appimage
