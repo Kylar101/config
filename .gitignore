@@ -1,3 +1,4 @@
 vim/plugged
 .vim/plugged
 vim/.vimrc.swp
+.vim/undodir
