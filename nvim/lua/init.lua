@@ -5,6 +5,7 @@ if not ok then
 end
 
 require('c.treesitter')
+require('c.toggleterm')
 
 require('c.telescope')
 require('c.telescope.mappings')

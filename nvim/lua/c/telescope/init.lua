@@ -33,8 +33,8 @@ require('telescope').setup {
     mappings = {
       i = {
         ["<C-x>"] = false,
-        ["<C-v>"] = actions.goto_file_selection_vsplit,
-        ["<C-s"] = actions.goto_file_selection_split,
+        ["<C-v>"] = actions.select_vertical,
+        ["<C-s"] = actions.select_horizontal,
         ["<esc>"] = actions.close
       }
     },

@@ -33,6 +33,8 @@ return require('packer').startup(
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 --    use 'nvim-treesitter/playground'
 
+    use {"akinsho/nvim-toggleterm.lua"}
+
     use { 'junegunn/fzf', run = './install --all' }
     use { 'junegunn/fzf.vim' }
     use 'junegunn/goyo.vim'

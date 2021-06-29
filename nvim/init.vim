@@ -42,6 +42,8 @@ nnoremap <leader>wl <C-w>l
 nnoremap <leader>wv <C-w>v
 nnoremap <leader>ws <C-w>s
 
+nnoremap <leader>pt :ToggleTerm<CR>
+
 " project
 nnoremap <leader>pw :lua require'telescope.builtin'.live_grep{}<CR>
 "nnoremap <leader>pf :lua require'telescope.builtin'.git_files{}<CR>
