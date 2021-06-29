@@ -6,6 +6,7 @@ end
 
 require('c.treesitter')
 require('c.toggleterm')
+require('c.orgmode')
 
 require('c.telescope')
 require('c.telescope.mappings')
