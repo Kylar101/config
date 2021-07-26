@@ -85,6 +85,10 @@ function M.lsp_code_actions()
   require('telescope.builtin').lsp_code_actions(opts)
 end
 
+function M.find_in_files()
+  require('telescope.builtin').live_grep()
+end
+
 return setmetatable({}, {
   __index = function(_, k)
     if M[k] then
