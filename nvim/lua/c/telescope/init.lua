@@ -5,13 +5,15 @@ local previewers = require('telescope.previewers')
 
 require('telescope').setup {
   defaults = {
-    prompt_prefix = '>',
+    prompt_prefix = '> ',
+    selection_caret = '> ',
 
     winblend = 0,
-    preview_cutoff = 120,
 
     layout_strategy = 'horizontal',
-    layout_defaults = {
+    layout_config = {
+      prompt_position = "top",
+      preview_cutoff = 120,
       horizontal = {
         width_padding = 0.1,
         height_padding = 0.1,
@@ -27,7 +29,6 @@ require('telescope').setup {
     selection_strategy = "reset",
     sorting_strategy = "ascending",
     scroll_strategy = "cycle",
-    prompt_position = "top",
     color_devicons = true,
 
     mappings = {
@@ -39,10 +40,8 @@ require('telescope').setup {
       }
     },
 
-    borderchars = {
-      { '─', '│', '─', '│', '╭', '╮', '╯', '╰'},
-      preview = { '─', '│', '─', '│', '╭', '╮', '╯', '╰'},
-    },
+    border = {},
+    borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
 
     file_sorter = sorters.get_fzy_sorter,
 
