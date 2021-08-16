@@ -61,12 +61,8 @@ function M.edit_neovim()
     prompt_title = '~ dotfiles ~',
     shorten_path = false,
     cwd = '~/_repos/config/nvim',
-    width = 0.25,
 
-    layout_strategy = 'horizontal',
-    layout_config = {
-      preview_width = 0.65
-    }
+    layout_strategy = 'horizontal'
   }
 end
 
