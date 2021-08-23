@@ -1,0 +1,13 @@
+#!/bin/sh
+
+message=$1
+currentBranch=$(git symbolic-ref --short -q HEAD)
+
+if [ ! -z "$1" ]
+then
+  git add .
+  git commit -m "$1"
+  git push origin $currentBranch
+else
+  echo "Commit message is not provided"
+fi
