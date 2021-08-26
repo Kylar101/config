@@ -6,8 +6,8 @@ currentBranch=$(git symbolic-ref --short -q HEAD)
 if [ ! -z "$1" ] # checking if  the commit message is present. If not, aborting
 then
   git add .
-  git commit -m "$currentBranch: $message"
-  git push origin $currentBranch
+  git commit -m "$currentBranch: $message" --no-verify
+  git push origin $currentBranch --no-verify
 else
   echo "Commit message is not provided"
 fi
