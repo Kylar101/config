@@ -54,5 +54,6 @@ return require('packer').startup(
     use { 'scrooloose/nerdtree', opt = true, cmd = { 'NERDTreeToggle' } }
 
     use 'gruvbox-community/gruvbox'
+    use 'rebelot/kanagawa.nvim'
   end
 )

@@ -39,6 +39,7 @@ local custom_attach = function(client)
   mapper('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
   mapper('n', 'gD', '<cmd>lua vim.lsp.buf.implementation()<cr>')
   mapper('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>')
+  mapper('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>') -- help docs in popup
 
   mapper('n', '<leader>ls', '<cmd>lua vim.lsp.util.show_line_diagnostics()<cr>')
 
