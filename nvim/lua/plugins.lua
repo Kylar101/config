@@ -44,7 +44,13 @@ return require('packer').startup(
     use 'neovim/nvim-lspconfig'
     use 'tjdevries/nlua.nvim'
     use 'nvim-lua/lsp-status.nvim'
-    use 'nvim-lua/completion-nvim'
+
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'L3MON4D3/LuaSnip'
+    use 'saadparwaiz1/cmp_luasnip'
 
     use 'pangloss/vim-javascript'
     use 'leafgarland/typescript-vim'
@@ -52,6 +58,10 @@ return require('packer').startup(
     use 'mxw/vim-jsx'
 
     use { 'scrooloose/nerdtree', opt = true, cmd = { 'NERDTreeToggle' } }
+    use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
 
     use 'gruvbox-community/gruvbox'
     use 'rebelot/kanagawa.nvim'

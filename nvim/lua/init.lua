@@ -11,6 +11,8 @@ require('c.orgmode')
 require('c.telescope')
 require('c.telescope.mappings')
 
+require('lualine').setup()
+
 -- autoload files
 for _, mod in ipairs(vim.api.nvim_get_runtime_file('lua/auto/**/*.lua', true)) do
   ok, msg = pcall(loadfile(mod))
