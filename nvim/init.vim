@@ -68,6 +68,8 @@ setlocal colorcolumn=80
 set completeopt=menuone,noinsert,noselect
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 
+set laststatus=3
+
 " colorscheme
 colorscheme kanagawa
 set background=dark
