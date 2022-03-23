@@ -1,0 +1,1 @@
+/home/benlowbridge/.doom.d/
