@@ -43,6 +43,7 @@ nnoremap <leader>wv <C-w>v
 nnoremap <leader>ws <C-w>s
 
 nnoremap <leader>pt :ToggleTerm<CR>
+tnoremap jk <C-\><C-n>
 
 " project
 nnoremap <leader>pw :lua require'telescope.builtin'.live_grep{}<CR>
