@@ -48,9 +48,10 @@ nvim_lsp.tsserver.setup({
   capabilities = capabilities
 })
 
--- nvim_lsp.vuels.setup{
---   on_attach = custom_attach
--- }
+nvim_lsp.vuels.setup{
+  on_attach = custom_attach,
+  capabilities = capabilities
+}
 
 
 nvim_lsp.rust_analyzer.setup({
