@@ -4,12 +4,11 @@ if not ok then
   print(msg)
 end
 
-require('c.treesitter')
-require('c.toggleterm')
-require('c.orgmode')
+require('options.treesitter')
+require('options.toggleterm')
+require('options.orgmode')
 
-require('c.telescope')
-require('c.telescope.mappings')
+require('options.telescope')
 
 require('lualine').setup({
   options = {

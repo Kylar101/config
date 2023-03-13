@@ -5,6 +5,7 @@ local custom_captures = {
 }
 
 require('nvim-treesitter.configs').setup {
+  ensure_installed = { "lua", "typescript", "javascript"},
   highlight = {
     enable = true,
     disable = {"json"},

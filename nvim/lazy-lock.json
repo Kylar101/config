@@ -1,0 +1,14 @@
+{
+  "kanagawa.nvim": { "branch": "master", "commit": "99d9f72122e92ba816c86e10ce8e97c555be99ba" },
+  "lazy.nvim": { "branch": "main", "commit": "5b4444f0d7e556deba3f7ca949a2ba0e2c3369fb" },
+  "lsp-status.nvim": { "branch": "master", "commit": "54f48eb5017632d81d0fd40112065f1d062d0629" },
+  "lualine.nvim": { "branch": "master", "commit": "e99d733e0213ceb8f548ae6551b04ae32e590c80" },
+  "nlua.nvim": { "branch": "master", "commit": "01aa428ff00605d52d0c0ece560f6a6d7971726b" },
+  "nvim-lspconfig": { "branch": "master", "commit": "4bb0f1845c5cc6465aecedc773fc2d619fcd8faf" },
+  "nvim-treesitter": { "branch": "master", "commit": "5b505f565816bc7e8c08605285ab78ecd7ca5945" },
+  "nvim-web-devicons": { "branch": "master", "commit": "4ee637e0b1873efe1e901380f232799fa0764879" },
+  "plenary.nvim": { "branch": "master", "commit": "253d34830709d690f013daf2853a9d21ad7accab" },
+  "popup.nvim": { "branch": "master", "commit": "b7404d35d5d3548a82149238289fa71f7f6de4ac" },
+  "telescope.nvim": { "branch": "master", "commit": "a3f17d3baf70df58b9d3544ea30abe52a7a832c2" },
+  "toggleterm.nvim": { "branch": "main", "commit": "a5638b2206c3930a16a24e5c184dddd572f8cd34" }
+}

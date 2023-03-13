@@ -1,7 +1,7 @@
 local map = function(key, fn, options, buffer)
   local mode = 'n'
   local rhs = string.format(
-    "<cmd>lua require('c.telescope')['%s']('%s')<CR>",
+    "<cmd>lua require('options.telescope')['%s']('%s')<CR>",
     fn,
     options and vim.inspect(options, { newline = '' }) or ''
   )
@@ -26,3 +26,5 @@ map('<leader>qf', 'lsp_code_actions')
 map('<leader>sw', 'find_in_files')
 
 map('<leader>df', 'lsp_diagnostics')
+
+map('<leader>ca', 'lsp_code_actions')
