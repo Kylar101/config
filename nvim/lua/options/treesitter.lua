@@ -4,8 +4,21 @@ local custom_captures = {
   ['function.bracket'] = 'Type'
 }
 
+local treesitterpath = vim.fn.stdpath "data" .. "/treesitter"
+vim.opt.runtimepath:append(treesitterpath)
+
 require('nvim-treesitter.configs').setup {
-  ensure_installed = { "lua", "typescript", "javascript"},
+  parser_install_dir = treesitterpath,
+  ensure_installed = {
+    "lua",
+    "typescript",
+    "javascript",
+    "rust",
+    "tsx",
+    "vue",
+    "json",
+    "dockerfile"
+  },
   highlight = {
     enable = true,
     disable = {"json"},

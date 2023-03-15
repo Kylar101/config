@@ -3,12 +3,16 @@ return {
   'nvim-lua/plenary.nvim',
   'nvim-lua/telescope.nvim',
 
-  { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = function()
+      require('nvim-treesitter/install').update({ with_sync = true })
+    end
+  },
 
   {'akinsho/toggleterm.nvim', version = "*", config = true},
 
   -- lsp
-  '',
   'neovim/nvim-lspconfig',
   'tjdevries/nlua.nvim',
   'nvim-lua/lsp-status.nvim',

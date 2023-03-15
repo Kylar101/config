@@ -6,7 +6,6 @@
 --    |____|__ \/ ____||____(____  /__|
 --            \/\/               \/
 
-require('base')
 local opt = vim.opt
 
 vim.g.mapleader = " "
@@ -43,6 +42,8 @@ require("lazy").setup("plugins", {
     },
   },
 })
+
+require('base')
 
 -- general
 map("i", "jk", "<ESC>")

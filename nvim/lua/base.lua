@@ -6,7 +6,6 @@ end
 
 require('options.treesitter')
 require('options.toggleterm')
-require('options.orgmode')
 
 require('options.telescope')
 
