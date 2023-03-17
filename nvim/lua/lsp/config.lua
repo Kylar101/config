@@ -1,7 +1,7 @@
 require('lsp.completion')
 local nvim_lsp = require('lspconfig')
 local nvim_status = require('lsp-status')
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local status = require('lsp.status')
 
@@ -27,7 +27,6 @@ local custom_attach = function(client)
 
   mapper('n', '<leader>dn', vim.diagnostic.goto_next)
   mapper('n', '<leader>dp', vim.diagnostic.goto_prev)
-
 end
 
 -- nvim_lsp.omnisharp.setup{
