@@ -7,7 +7,7 @@ local custom_captures = {
 local treesitterpath = vim.fn.stdpath "data" .. "/treesitter"
 vim.opt.runtimepath:append(treesitterpath)
 
-require('nvim-treesitter.configs').setup {
+require'nvim-treesitter.configs'.setup {
   parser_install_dir = treesitterpath,
   ensure_installed = {
     "lua",
@@ -23,7 +23,6 @@ require('nvim-treesitter.configs').setup {
     enable = true,
     disable = {"json"},
     use_languagetree = false,
-    custom_captures = custom_captures
   },
   indent = {
     enable = true

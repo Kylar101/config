@@ -5,7 +5,7 @@ if not ok then
 end
 
 require('options.treesitter')
-require('options.toggleterm')
+-- require('options.toggleterm')
 
 require('options.telescope')
 

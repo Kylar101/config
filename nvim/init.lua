@@ -22,6 +22,7 @@ if not vim.loop.fs_stat(lazypath) then
   }
 end
 opt.runtimepath:prepend(lazypath)
+vim.filetype.add({ extensions = { yml = "yaml" }})
 
 local map = require('options.keymap').map
 
@@ -67,7 +68,7 @@ map('n', '<leader>wl', '<C-w>l')
 map('n', '<leader>wv', '<C-w>v')
 map('n', '<leader>ws', '<C-w>s')
 
-map('n', '<leader>pt', ':ToggleTerm<CR>')
+-- map('n', '<leader>pt', ':ToggleTerm<CR>')
 map('t', 'jk', '<C-\\><C-n>')
 
 require('options.telescope.mappings')

@@ -7,7 +7,7 @@ if [ ! -z "$1" ] # checking if  the commit message is present. If not, aborting
 then
   git add .
   git commit -m "$currentBranch: $message" --no-verify
-  git push origin $currentBranch --no-verify
+  git push -u origin $currentBranch --no-verify
 else
   echo "Commit message is not provided"
 fi

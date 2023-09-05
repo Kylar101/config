@@ -3,14 +3,8 @@ return {
   'nvim-lua/plenary.nvim',
   'nvim-lua/telescope.nvim',
 
-  {
-    'nvim-treesitter/nvim-treesitter',
-    build = function()
-      require('nvim-treesitter/install').update({ with_sync = true })
-    end
-  },
-
-  {'akinsho/toggleterm.nvim', version = "*", config = true},
+  { 'nvim-treesitter/nvim-treesitter', build = ":TSUpdate" },
+  { 'akinsho/toggleterm.nvim', version = "*", config = true },
 
   -- lsp
   'neovim/nvim-lspconfig',
@@ -24,8 +18,9 @@ return {
   'tjdevries/nlua.nvim',
   'nvim-lua/lsp-status.nvim',
 
+  -- styling
+
   -- themes
-  'kyazdani42/nvim-web-devicons',
   'nvim-lualine/lualine.nvim',
   'rebelot/kanagawa.nvim'
 }
