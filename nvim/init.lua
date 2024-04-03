@@ -47,6 +47,7 @@ require("lazy").setup("plugins", {
 require('base')
 
 -- general
+map('n', '<leader><leader>', ':')
 map("i", "jk", "<ESC>")
 map('n', '<leader><leader>', ':')
 map('n', '<leader>fs', ':w<CR>')
