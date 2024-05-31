@@ -29,12 +29,33 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq org-directory "~/_repos/notes/")
+
+(after! org
+  (org-indent-mode)
+  (setq org-agenda-skip-scheduled-if-done t
+         org-agenda-skip-deadline-if-done t
+         org-agenda-files '("~/_repos/notes/inbox.org"
+                            "~/_repos/notes/shedule.org"
+                            "~/_repo/notes/brain-dump.org")
+         org-todo-keywords '((sequence "TODO(t)" "INPROGRESS(p)" "REVIEW(r)" "BLOCKED(b)" "|" "DONE(d)" "CANCELED(c)") ;; Regular sequenec
+                                        (sequence "TRIAGE(r)" "|" "BUG(u)" "KNOWNCAUSE(k)" "FIXED(f)" "WONTDO(w)")) ;; Triaging
+         org-todo-keywords-for-agenda '((sequence "TODO(t)" "INPROGRESS(p)" "REVIEW(r)" "BLOCKED(b)" "|" "DONE(d)" "CANCELED(c)"))
+))
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
+(setq display-line-numbers-type 'relative)
 
+(setq-default tab-width 2)
+(setq-default typescript-indent-level 2)
+
+(add-hook! rustic-mode
+  (add-hook 'before-save-hook 'lsp-format-buffer nil t))
+
+(after! rustic
+  (setq rustic-lsp-server 'rust-analyzer
+        lsp-rust-analyzer-server-display-inlay-hints t))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
