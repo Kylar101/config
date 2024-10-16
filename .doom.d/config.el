@@ -41,6 +41,13 @@
          org-todo-keywords '((sequence "TODO(t)" "INPROGRESS(p)" "REVIEW(r)" "BLOCKED(b)" "|" "DONE(d)" "CANCELED(c)") ;; Regular sequenec
                                         (sequence "TRIAGE(r)" "|" "BUG(u)" "KNOWNCAUSE(k)" "FIXED(f)" "WONTDO(w)")) ;; Triaging
          org-todo-keywords-for-agenda '((sequence "TODO(t)" "INPROGRESS(p)" "REVIEW(r)" "BLOCKED(b)" "|" "DONE(d)" "CANCELED(c)"))
+         org-todo-keyword-faces
+                '(("TODO" . (:foreground "#FF39A3" :weight bold))
+                  ("INPROGRESS" . (:foreground "#00ABFF" :weight bold))
+                  ("REVIEW" . (:foreground "orange" :weight bold))
+                  ("BLOCKED" . (:foreground "yellow" :weight bold))
+                  ("DONE" . (:foreground "red" :weight bold))
+                  ("CANCELLED" . (:foreground "red" :weight bold)))
 ))
 
 ;; This determines the style of line numbers in effect. If set to `nil', line

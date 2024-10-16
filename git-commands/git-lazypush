@@ -7,7 +7,7 @@ if [ ! -z "$1" ]
 then
   git add .
   git commit -m "$1"
-  git push origin $currentBranch
+  git push -u origin $currentBranch
 else
   echo "Commit message is not provided"
 fi
