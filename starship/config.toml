@@ -1,0 +1,60 @@
+format="""
+$directory\
+$git_branch\
+$git_status\
+$character\
+"""
+right_format="""
+$rust\
+$bun\
+$nodejs\
+"""
+
+palette = "home"
+
+[fill]
+symbol = " "
+
+[line_break]
+disabled = true
+
+[git_branch]
+style = "bold neon"
+format = "[$symbol$branch(:$remote_branch)]($style) "
+
+[git_status]
+style = "bold pewter"
+
+[directory]
+style = "bold fg:bluegreen"
+format = "[$path ]($style)"
+truncation_length = 3
+truncation_symbol = ".../"
+truncate_to_repo = false
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red)"
+
+[bun]
+style = "bold bun"
+format = "[$symbol($version )]($style)"
+symbol = "🍞 "
+
+[rust]
+format = "[$symbol($version )]($style)"
+detect_folders = ["src-tauri"]
+style = "bold orange"
+symbol = "󱘗 "
+
+[nodejs]
+symbol = " "
+
+[palettes.home]
+green = "#228B22"
+orange = "#FF7F50"
+bluegreen = "#088F8F"
+neon = "#FF3131"
+pewter = "#899499"
+bun = "#FBCFE8"
+
